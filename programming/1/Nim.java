@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 import java.util.Random;
 
-public class Nim {
+public class Nim  {
 
   public static String pluralOrNot (int machineTurn) {
       return (machineTurn == 1) ? "stone":"stones";
