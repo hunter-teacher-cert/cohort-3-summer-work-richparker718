@@ -1,0 +1,20 @@
+main prints “No, I”  followed by a space; zoop is then called invoking baffle which prints “wug” ; ping is then invoked which prints “.” 
+
+Because ping uses println, on a new line zoop then prints “You wugga” followed by a space and invokes baffle again outputting “wug” and then calls ping that outputs  “.” 
+
+
+On a new line, main then outputs “I” followed by a space and baffle is invoked again printing “wug” followed by  “.” 
+
+Output:
+No, I wug. 
+You wugga wug.
+I wug.
+
+
+Stack diagram
+main - zoop
+zoop - baffle
+baffle - ping
+ping - “ . “
+
+*Since ping is called in baffle, if you invoke baffle at the end of ping it will be recursive and call itself continuously

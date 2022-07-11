@@ -1,0 +1,8 @@
+//While the variable i is less than the length of the array of integers, the variable kiwi will be equal to itself multiplied by the value in the current index in the array after which i will increment by 1 and the value of kiwi is returned. 
+
+
+//For any integer in the array (a), if it equates to the 2nd integer argument, that integer will be returned and if no integer from the array equates, -1 will be returned.
+
+
+
+//For every integer in the array (a), if that value equates to the 2nd integer argument (apple), then increment the integer variable (pear) by 1, after every integer in the array (a) has been checked, return the value of pear.
