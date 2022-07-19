@@ -11,6 +11,7 @@ public class Driver{
      l.add("b");
      l.add("a");
      l.add(3,"z");
+     l.add(0,"hh");
      //l.remove(2);
   
      System.out.println(l);
