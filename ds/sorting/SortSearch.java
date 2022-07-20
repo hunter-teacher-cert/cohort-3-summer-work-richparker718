@@ -144,10 +144,16 @@ public class SortSearch{
   */
   public int linearSearch(int value){
 
-
-    return 0; // replace this return
-  }
+    int i= 0;
     
+    while(i < data.size()){
+      if (data.get(i) == value){
+         return i;
+    } 
+      i++;
+     }
+    return -1;
+      }
   /**
   Implement a binary search as specified by the comments   
   This algorithm only works on sorted ArrayLists.
