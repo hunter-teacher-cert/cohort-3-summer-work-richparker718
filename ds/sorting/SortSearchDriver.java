@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.*;
 
 public class SortSearchDriver {
+
+
+  
     public static void main(String[] args) {
 
 
@@ -23,11 +26,14 @@ public class SortSearchDriver {
 	// //Uncomment these to test part 3
 
 	//System.out.println(ss);
-	//ss.sort();
-	System.out.println(ss);
+	  ss.sort();
+	 System.out.println(ss);
 
       
-      System.out.println(ss.linearSearch(2));
+      //System.out.println(ss.linearSearch(2));
+
+      
+      System.out.println(ss.binarySearch(10));
 	
 
 

@@ -26,6 +26,8 @@ Search Project:
 
 public class SortSearch{
 
+   
+
     /* Sort project starts here */
     
     /* Instance Variables */
@@ -159,14 +161,40 @@ public class SortSearch{
   This algorithm only works on sorted ArrayLists.
   */
   public int binarySearch(int value){
-
     // create assign variables representing the high,
     // low and middle indices 
     // while we're not done:
     //   if the item is at data.get(middle), return middle
     //   otherwise, update high, low, and middle
+
     
-    return 0;
+      int low = 0;
+      int middle = (data.size()-1) / 2;
+      int high = data.size()-1;
+
+    
+      while( low<=high ){
+
+         if(value == data.get(middle)){
+            return middle;
+          }
+       
+       else if(value<data.get(middle)){
+         
+         high = middle-1;
+         middle = (low + high) /2;
+         
+       }
+      else if (value > data.get(middle)){
+       
+        low = middle+1;
+        middle = (low + high) /2;
+        
+     } 
+        
+     }
+    
+    return -1;
     
   }
     
