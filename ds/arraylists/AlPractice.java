@@ -41,8 +41,6 @@ public class AlPractice{
     }
     
     return randomNums;
-    
-    //placeholder to compile.
   }
 
   /**
@@ -57,7 +55,7 @@ public class AlPractice{
     for(int i=0; i<dataList.size(); i++){
       sumList += dataList.get(i);
     }
-    return sumList;//placeholder to compile.
+    return sumList;
   }
 
   /**
@@ -74,12 +72,14 @@ public class AlPractice{
   */
   public static void swapElements(ArrayList<Integer> dataList, int index1,int index2){
 
-    int temp1 = dataList.get(index1);
-      int temp2 = dataList.get(index2);
-
-      dataList.set(index1,temp2);
-      dataList.set(index2,temp1);
-
+       if (index1 > dataList.size()-1 || index2 > dataList.size()-1){
+         System.out.println("Inputs out of range");
+       } else{
+         int temp1 = dataList.get(index1);
+         int temp2 = dataList.get(index2);
+         dataList.set(index1,temp2);
+         dataList.set(index2,temp1);
+  }
   }
 
   /**
@@ -90,7 +90,7 @@ public class AlPractice{
   - The dataList is modified such that all occurances of valueToRemove are removed.
   */
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
-
+    
     for(int i= dataList.size()-1; i>=0; i--){
       if(dataList.get(i)==valueToRemove){
         dataList.remove(i);
@@ -112,7 +112,12 @@ public class AlPractice{
   - The parameter ArrayLists should not be modified.
   */
   public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-    return null;//placeholder to compile.
+      ArrayList <Integer> sum = new ArrayList <Integer> ();
+      for (int i =0; i<ListA.size(); i++){
+          sum.add(ListA.get(i) + ListB.get(i));
+    }
+    
+    return sum;
   }
 
   /** zipLists
@@ -126,35 +131,53 @@ public class AlPractice{
   - The parameter ArrayLists should not be modified.
   */
   public static ArrayList<Integer> zipLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-    return null;//placeholder to compile.
+
+    ArrayList<Integer> zip = new ArrayList<Integer>();
+
+          
+    for (int i = 0; i< ListA.size() && i< ListB.size(); i++){
+         zip.add(ListA.get(i));
+         zip.add(ListB.get(i));
+  }
+    return zip;
   }
 
 
 
+   public static void main(String[] args) {
 
-public static void main(String[] args) {
-
-    ArrayList<Integer> al;
+    ArrayList<Integer> a;
+    ArrayList<Integer> b;
+    ArrayList<Integer> c;
 
     //Uncomment these to test buildRandomList
-     al = buildRandomList(10,100);
-     System.out.println(al);
-     System.out.println(sumOfList(al));
+     a = buildRandomList(7, 20);
+     b = buildRandomList(3, 9);
+     c = buildRandomList(4, 7);
+     System.out.println(a);
+     // System.out.println(b);
+     // //System.out.println(sumOfList(a));
+     // System.out.println(sumLists(a,b));
+     // System.out.println();
+      //System.out.println(b);
+      //System.out.println(c);
+    
+      //System.out.println(zipLists(b,c));
 
-    //Uncomment these to test swapElements
-    swapElements(al,2,6); // NOTE: had to include al
-    System.out.println(al);
+    // //Uncomment these to test swapElements
+     swapElements(a,2,6); // NOTE: had to include al
+     System.out.println(a);
 
-    // Uncomment these to test removeValue
-    al.add(5);
-    al.add(10);
-    al.add(5);
-    al.add(13);
-    al.set(2,5);
-    al.set(3,5);
-    System.out.println(al); //NOTE:  this was listed as a, not al
-    removeValue(al,5);
-    System.out.println(al); //NOTE:  this was listed as a, not al
+    // // Uncomment these to test removeValue
+    // a.add(5);
+    // a.add(10);
+    // a.add(5);
+    // a.add(13);
+    // a.set(2,5);
+    // a.set(3,5);
+    // System.out.println(a); 
+    // removeValue(a,5);
+    // System.out.println(a); 
 
   }
 

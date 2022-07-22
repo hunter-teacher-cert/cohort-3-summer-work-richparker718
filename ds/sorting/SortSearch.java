@@ -3,7 +3,7 @@ import java.util.*;
 
 /*
 Team 11
-Collaborators: J. Bianchi, A. Cassara, J. Higgins, R. Parker
+Collaborators:
 */
 
 /*
@@ -156,6 +156,25 @@ public class SortSearch{
      }
     return -1;
       }
+
+  
+  JOSHUA HIGGINS SOLUTION (MORE ELEGANT THAN MINE)
+  public int linearSearch(int value){
+    // Default to -1 if not found.
+  //   int index = -1;
+
+  //   // Check the whole ArrayList, or stop after finding first
+  //   // match.
+    
+  //   for(int i = 0; i < data.size() && index == -1; i++){
+  //     if(data.get(i) == value){
+  //       index = i;
+  //     }
+  //   }
+  //   return index; // replace this return
+  // }
+
+  
   /**
   Implement a binary search as specified by the comments   
   This algorithm only works on sorted ArrayLists.
@@ -169,8 +188,9 @@ public class SortSearch{
 
     
       int low = 0;
-      int middle = (data.size()-1) / 2;
+      //int middle = (low+high) / 2;
       int high = data.size()-1;
+      int middle = (low+high) / 2;
 
     
       while( low<=high ){
@@ -179,16 +199,16 @@ public class SortSearch{
             return middle;
           }
        
-       else if(value<data.get(middle)){
+         else if(value<data.get(middle)){
          
          high = middle-1;
          middle = (low + high) /2;
          
        }
-      else if (value > data.get(middle)){
+         else if (value > data.get(middle)){
        
-        low = middle+1;
-        middle = (low + high) /2;
+         low = middle+1;
+         middle = (low + high) /2;
         
      } 
         
@@ -207,10 +227,23 @@ public class SortSearch{
 
   public int binarySearchRecursive(int value, int lowIndex,
                                    int highIndex){
+    int low = lowIndex;
+    int high = highIndex;
+    int middle = (lowIndex + highIndex)/2;
 
+    if (low > high){
+      return -1;
+      
+    } else if (value > data.get(middle)){
+       return binarySearchRecursive (value, middle +1, high);
+      
+    } else if (value < data.get(middle)){
+       return binarySearchRecursive(value, low, middle -1);
+    }
+    
     // refer to class discussion
   
-    return 0;
+    return middle;
     
   }
     
