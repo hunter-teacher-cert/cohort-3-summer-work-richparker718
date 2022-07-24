@@ -158,8 +158,8 @@ public class SortSearch{
       }
 
   
-  JOSHUA HIGGINS SOLUTION (MORE ELEGANT THAN MINE)
-  public int linearSearch(int value){
+  // JOSHUA HIGGINS SOLUTION (MORE ELEGANT THAN MINE)
+  // public int linearSearch(int value){
     // Default to -1 if not found.
   //   int index = -1;
 

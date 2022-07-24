@@ -2,7 +2,7 @@ public class SortSearchReferenceDriver {
     public static void main(String[] args) {
 
 
-	int size = 100000;
+	int size = 10000;
 
 	SortSearchReference ss = new SortSearchReference(size);
 

@@ -112,8 +112,10 @@ public class AlPractice{
   - The parameter ArrayLists should not be modified.
   */
   public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
-      ArrayList <Integer> sum = new ArrayList <Integer> ();
-      for (int i =0; i<ListA.size(); i++){
+     
+    ArrayList <Integer> sum = new ArrayList <Integer> ();
+      
+    for (int i =0; i<ListA.size(); i++){
           sum.add(ListA.get(i) + ListB.get(i));
     }
     
@@ -134,11 +136,23 @@ public class AlPractice{
 
     ArrayList<Integer> zip = new ArrayList<Integer>();
 
-          
-    for (int i = 0; i< ListA.size() && i< ListB.size(); i++){
+    
+    for ( int i =0; i< ListA.size() && i< ListB.size(); i++){
          zip.add(ListA.get(i));
          zip.add(ListB.get(i));
-  }
+     
+    if (i == ListA.size()-1){
+      for (int j =i +1; j< ListB.size(); j++){
+          zip.add(ListB.get(j));
+        } 
+     } 
+      
+    else if (i == ListB.size()-1){
+       for (int j =i +1; j< ListA.size(); j++){
+         zip.add(ListA.get(j));
+       }
+    }
+    }
     return zip;
   }
 
@@ -153,20 +167,20 @@ public class AlPractice{
     //Uncomment these to test buildRandomList
      a = buildRandomList(7, 20);
      b = buildRandomList(3, 9);
-     c = buildRandomList(4, 7);
-     System.out.println(a);
+     c = buildRandomList(6, 25);
+     //System.out.println(a);
      // System.out.println(b);
      // //System.out.println(sumOfList(a));
      // System.out.println(sumLists(a,b));
      // System.out.println();
-      //System.out.println(b);
-      //System.out.println(c);
+      System.out.println(b);
+      System.out.println(c);
     
-      //System.out.println(zipLists(b,c));
+      System.out.println(zipLists(b,c));
 
     // //Uncomment these to test swapElements
-     swapElements(a,2,6); // NOTE: had to include al
-     System.out.println(a);
+     // swapElements(a,2,6); 
+     // System.out.println(a);
 
     // // Uncomment these to test removeValue
     // a.add(5);
